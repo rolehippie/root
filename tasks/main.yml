@@ -27,6 +27,7 @@
   with_items: '{{ root_castles }}'
   when: root_castles|default(None) != None
   command: /root/.homesick/repos/homeshick/bin/homeshick -f -b -q link {{ item | basename }}
+  changed_when: False
   tags:
     - root
 
