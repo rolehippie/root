@@ -18,8 +18,9 @@
   with_items: '{{ root_castles }}'
   when: root_castles|default(None) != None
   git:
-    repo: https://github.com/{{ item }}.git
-    dest: /root/.homesick/repos/{{ item | basename }}
+    repo: 'https://github.com/{{ item.name | default(item) }}.git'
+    dest: '/root/.homesick/repos/{{ (item.name | default(item)) | basename }}'
+    force: '{{ item.force | default(root_castles_force) }}'
   tags:
     - root
 
