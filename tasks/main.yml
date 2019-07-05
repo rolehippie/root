@@ -20,6 +20,7 @@
   git:
     repo: https://github.com/{{ item }}.git
     dest: /root/.homesick/repos/{{ item | basename }}
+    force: '{{ root_castles_force }}'
   tags:
     - root
 
