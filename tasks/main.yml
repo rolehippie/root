@@ -7,6 +7,15 @@
   tags:
     - root
 
+- name: update password
+  when: root_password != ""
+  user:
+    name: root
+    password: '{{ root_password }}'
+    update_password: always
+  tags:
+    - root
+
 - name: clone homeshick
   git:
     repo: https://github.com/andsens/homeshick.git

@@ -1,3 +1,4 @@
 root_castles: []
 root_sshkeys:
+root_password:
 root_castles_force: False
