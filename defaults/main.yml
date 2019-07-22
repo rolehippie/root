@@ -1,4 +1,5 @@
 root_castles: []
 root_sshkeys:
 root_password:
+root_shell: /bin/bash
 root_castles_force: False
