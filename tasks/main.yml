@@ -1,14 +1,4 @@
-- name: os variables
-  include_vars: '{{ item }}'
-  with_first_found:
-    - '{{ ansible_distribution | lower }}-{{ ansible_distribution_version }}.yml'
-    - '{{ ansible_distribution | lower }}.yml'
-    - '{{ ansible_os_family | lower }}.yml'
-  tags:
-    - root
-
 - name: install packages
-  when: root_install_package | default(True)
   loop:
     - git
   package:
@@ -37,7 +27,7 @@
 - name: clone homeshick
   git:
     repo: https://github.com/andsens/homeshick.git
-    dest: '{{ root_home_path }}/.homesick/repos/homeshick'
+    dest: /root/.homesick/repos/homeshick
   tags:
     - root
 
@@ -46,7 +36,7 @@
   when: root_castles|default(None) != None
   git:
     repo: 'https://github.com/{{ item.name | default(item) }}.git'
-    dest: '{{ root_home_path }}/.homesick/repos/{{ (item.name | default(item)) | basename }}'
+    dest: '/root/.homesick/repos/{{ (item.name | default(item)) | basename }}'
     force: '{{ item.force | default(root_castles_force) }}'
   tags:
     - root
@@ -54,7 +44,7 @@
 - name: link castles
   with_items: '{{ root_castles }}'
   when: root_castles|default(None) != None
-  command: '{{ root_home_path }}/.homesick/repos/homeshick/bin/homeshick -f -b -q link {{ item | basename }}'
+  command: '/root/.homesick/repos/homeshick/bin/homeshick -f -b -q link {{ item | basename }}'
   changed_when: False
   tags:
     - root
@@ -64,7 +54,7 @@
   authorized_key:
     user: root
     key: '{{ root_sshkeys }}'
-    path: '{{ root_home_path }}/.ssh/authorized_keys'
+    path: /root/.ssh/authorized_keys
     exclusive: True
     state: present
   tags:

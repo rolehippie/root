@@ -8,7 +8,9 @@ galaxy_info:
     versions:
     - xenial
     - bionic
-  - name: MacOSX
+  - name: Debian
+  - name: openSUSE Leap
+  - name: CentOS
   galaxy_tags:
   - root
 
