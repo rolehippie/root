@@ -1,61 +1,85 @@
-- name: install packages
+# Standards: 0.1
+---
+- name: Install required packages
   loop:
     - git
   package:
-    name: '{{ item }}'
+    name: "{{ item }}"
     state: present
   tags:
     - root
 
-- name: update password
-  when: root_password != ""
+- name: Update root password
+  when: root_password | default(False)
   user:
     name: root
-    password: '{{ root_password }}'
+    password: "{{ root_password }}"
     update_password: always
   tags:
     - root
 
-- name: enforce shell
-  when: root_shell != ""
+- name: Enforce root shell
+  when: root_shell | default(False)
   user:
     name: root
-    shell: '{{ root_shell }}'
+    shell: "{{ root_shell }}"
   tags:
     - root
 
-- name: clone homeshick
+- name: Install ohmyzsh repo
+  when: root_ohmyzsh | default(False)
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: /root/.oh-my-zsh
+  tags:
+    - root
+
+- name: Install bashit repo
+  when: root_bashit | default(False)
+  git:
+    repo: https://github.com/Bash-it/bash-it.git
+    dest: /root/.bash_it
+  tags:
+    - root
+
+- name: Clone homeshick base
   git:
     repo: https://github.com/andsens/homeshick.git
     dest: /root/.homesick/repos/homeshick
   tags:
     - root
 
-- name: clone castles
-  with_items: '{{ root_castles }}'
-  when: root_castles|default(None) != None
+- name: Clone homeshick castles
+  loop: "{{ root_castles }}"
+  loop_control:
+    label: "{{ item.name | default(item) }}"
+  when: root_castles | default(False)
   git:
-    repo: 'https://github.com/{{ item.name | default(item) }}.git'
-    dest: '/root/.homesick/repos/{{ (item.name | default(item)) | basename }}'
-    force: '{{ item.force | default(root_castles_force) }}'
+    repo: "https://github.com/{{ item.name | default(item) }}.git"
+    dest: "/root/.homesick/repos/{{ (item.name | default(item)) | basename }}"
+    force: "{{ item.force | default(root_castles_force) }}"
   tags:
     - root
 
-- name: link castles
-  with_items: '{{ root_castles }}'
-  when: root_castles|default(None) != None
-  command: '/root/.homesick/repos/homeshick/bin/homeshick -f -b -q link {{ item | basename }}'
+- name: Link homeshick castles
+  loop: "{{ root_castles }}"
+  loop_control:
+    label: "{{ item.name | default(item) }}"
+  when: root_castles | default(False)
+  command: "/root/.homesick/repos/homeshick/bin/homeshick -f -b -q link {{ item | basename }}"
   changed_when: False
   tags:
     - root
 
-- name: write sshkeys
-  when: root_sshkeys|default(None) != None
+- name: Write authorized keys
+  when: root_sshkeys | default(False)
   authorized_key:
     user: root
-    key: '{{ root_sshkeys }}'
+    key: "{{ root_sshkeys | join('\n') }}"
     path: /root/.ssh/authorized_keys
     exclusive: True
     state: present
   tags:
     - root
+
+...
