@@ -112,7 +112,7 @@ root_sshkeys:
 
 ## Dependencies
 
-- None
+* None
 
 ## License
 
