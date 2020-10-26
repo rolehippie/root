@@ -1,8 +1,14 @@
 # root
 
-[![Build Status](https://cloud.drone.io/api/badges/rolehippie/root/status.svg)](https://cloud.drone.io/rolehippie/root)
+[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/root) [![Build Status](https://img.shields.io/drone/build/rolehippie/root/master?logo=drone)](https://cloud.drone.io/rolehippie/root) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/root)](https://github.com/rolehippie/root/blob/master/LICENSE) 
 
-Ansible role to configure root
+Ansible role to configure the system root user. 
+
+## Sponsor 
+
+[![Proact Deutschland GmbH](https://proact.eu/wp-content/uploads/2020/03/proact-logo.png)](https://proact.eu) 
+
+Building and improving this Ansible role have been sponsored by my employer **Proact Deutschland GmbH**.
 
 ## Table of content
 
