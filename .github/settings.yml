@@ -1,8 +1,8 @@
 ---
 repository:
   name: root
-  description: Ansible role for root
-  topics: ansible, role, ansible-role
+  description: Ansible role to configure the system root user
+  topics: ansible, role, ansible-role, hacktoberfest
 
   private: false
   has_issues: true
@@ -44,6 +44,9 @@ labels:
   - name: wontfix
     color: ffffff
     description: This will not be worked on
+  - name: hacktoberfest-accepted
+    color: cccccc
+    description: Accepted as a Hacktoberfest submission
 
 branches:
   - name: master
