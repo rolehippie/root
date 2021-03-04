@@ -28,7 +28,7 @@
 
 - name: Install ohmyzsh repo
   when: root_ohmyzsh | default(False)
-  no_log: True
+  diff: False
   git:
     repo: https://github.com/ohmyzsh/ohmyzsh.git
     dest: /root/.oh-my-zsh
@@ -37,7 +37,7 @@
 
 - name: Install bashit repo
   when: root_bashit | default(False)
-  no_log: True
+  diff: False
   git:
     repo: https://github.com/Bash-it/bash-it.git
     dest: /root/.bash_it
@@ -45,7 +45,7 @@
     - root
 
 - name: Clone homeshick base
-  no_log: True
+  diff: False
   git:
     repo: https://github.com/andsens/homeshick.git
     dest: /root/.homesick/repos/homeshick
