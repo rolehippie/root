@@ -57,6 +57,7 @@
   loop_control:
     label: "{{ item.name | default(item) }}"
   when: root_castles | default(False)
+  diff: False
   git:
     repo: "https://github.com/{{ item.name | default(item) }}.git"
     dest: "/root/.homesick/repos/{{ (item.name | default(item)) | basename }}"
