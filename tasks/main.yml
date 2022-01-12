@@ -59,7 +59,7 @@
   when: root_castles | default(False)
   diff: False
   git:
-    repo: "https://github.com/{{ item.name | default(item) }}.git"
+    repo: "{{ item.name | default(item) if (item.name | default(item)).startswith('http') else 'https://github.com/' + item.name | default(item) }}"
     dest: "/root/.homesick/repos/{{ (item.name | default(item)) | basename }}"
     force: "{{ item.force | default(root_castles_force) }}"
   tags:
