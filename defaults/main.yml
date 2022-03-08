@@ -15,14 +15,23 @@ root_shell: /bin/bash
 # @end
 root_castles: []
 
+# @var root_castles_force:description: Force castle updates
+root_castles_force: True
+
 # @var root_ohmyzsh:description: Install oh-my-zsh repo
 root_ohmyzsh: False
+
+# @var root_ohmyzsh_version:description: Version of bash-it to install
+root_ohmyzsh_version: latest
 
 # @var root_bashit:description: Install bash-it repo
 root_bashit: False
 
-# @var root_castles_force:description: Force castle updates
-root_castles_force: True
+# @var root_bashit_version:description: Version of bash-it to install
+root_bashit_version: latest
+
+# @var root_homeshick_version:description: Version of homeshick to install
+root_homeshick_version: latest
 
 # @var root_sshkeys:description: List of authorized keys
 # @var root_sshkeys:example: >

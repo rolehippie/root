@@ -14,9 +14,12 @@ Building and improving this Ansible role have been sponsored by my employer **Pr
 
 - [Default Variables](#default-variables)
   - [root_bashit](#root_bashit)
+  - [root_bashit_version](#root_bashit_version)
   - [root_castles](#root_castles)
   - [root_castles_force](#root_castles_force)
+  - [root_homeshick_version](#root_homeshick_version)
   - [root_ohmyzsh](#root_ohmyzsh)
+  - [root_ohmyzsh_version](#root_ohmyzsh_version)
   - [root_password](#root_password)
   - [root_shell](#root_shell)
   - [root_sshkeys](#root_sshkeys)
@@ -37,6 +40,16 @@ Install bash-it repo
 
 ```YAML
 root_bashit: false
+```
+
+### root_bashit_version
+
+Version of bash-it to install
+
+#### Default value
+
+```YAML
+root_bashit_version: latest
 ```
 
 ### root_castles
@@ -68,6 +81,16 @@ Force castle updates
 root_castles_force: true
 ```
 
+### root_homeshick_version
+
+Version of homeshick to install
+
+#### Default value
+
+```YAML
+root_homeshick_version: latest
+```
+
 ### root_ohmyzsh
 
 Install oh-my-zsh repo
@@ -76,6 +99,16 @@ Install oh-my-zsh repo
 
 ```YAML
 root_ohmyzsh: false
+```
+
+### root_ohmyzsh_version
+
+Version of bash-it to install
+
+#### Default value
+
+```YAML
+root_ohmyzsh_version: latest
 ```
 
 ### root_password

@@ -32,6 +32,7 @@
   git:
     repo: https://github.com/ohmyzsh/ohmyzsh.git
     dest: /root/.oh-my-zsh
+    version: "{{ 'HEAD' if root_ohmyzsh_version == 'latest' else root_ohmyzsh_version }}"
   tags:
     - root
 
@@ -41,6 +42,7 @@
   git:
     repo: https://github.com/Bash-it/bash-it.git
     dest: /root/.bash_it
+    version: "{{ 'HEAD' if root_bashit_version == 'latest' else root_bashit_version }}"
   tags:
     - root
 
@@ -49,6 +51,7 @@
   git:
     repo: https://github.com/andsens/homeshick.git
     dest: /root/.homesick/repos/homeshick
+    version: "{{ 'HEAD' if root_homeshick_version == 'latest' else root_homeshick_version }}"
   tags:
     - root
 
@@ -62,6 +65,7 @@
     repo: "{{ item.name | default(item) if (item.name | default(item)).startswith('http') else 'https://github.com/' + item.name | default(item) }}"
     dest: "/root/.homesick/repos/{{ (item.name | default(item)) | basename }}"
     force: "{{ item.force | default(root_castles_force) }}"
+    version: "{{ item.1.version | default('HEAD') }}"
   tags:
     - root
 
