@@ -1,28 +1,29 @@
 # root
 
-[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/root) [![Testing Build](https://github.com/rolehippie/root/workflows/testing/badge.svg)](https://github.com/rolehippie/root/actions?query=workflow%3Atesting) [![Readme Build](https://github.com/rolehippie/root/workflows/readme/badge.svg)](https://github.com/rolehippie/root/actions?query=workflow%3Areadme) [![Galaxy Build](https://github.com/rolehippie/root/workflows/galaxy/badge.svg)](https://github.com/rolehippie/root/actions?query=workflow%3Agalaxy) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/root)](https://github.com/rolehippie/root/blob/master/LICENSE) 
+[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/root) [![Testing Build](https://github.com/rolehippie/root/workflows/testing/badge.svg)](https://github.com/rolehippie/root/actions?query=workflow%3Atesting) [![Readme Build](https://github.com/rolehippie/root/workflows/readme/badge.svg)](https://github.com/rolehippie/root/actions?query=workflow%3Areadme) [![Galaxy Build](https://github.com/rolehippie/root/workflows/galaxy/badge.svg)](https://github.com/rolehippie/root/actions?query=workflow%3Agalaxy) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/root)](https://github.com/rolehippie/root/blob/master/LICENSE)
 
-Ansible role to configure the system root user. 
+Ansible role to configure the system root user.
 
-## Sponsor 
+## Sponsor
 
-[![Proact Deutschland GmbH](https://proact.eu/wp-content/uploads/2020/03/proact-logo.png)](https://proact.eu) 
+[![Proact Deutschland GmbH](https://proact.eu/wp-content/uploads/2020/03/proact-logo.png)](https://proact.eu)
 
 Building and improving this Ansible role have been sponsored by my employer **Proact Deutschland GmbH**.
 
 ## Table of content
 
-* [Default Variables](#default-variables)
-  * [root_bashit](#root_bashit)
-  * [root_castles](#root_castles)
-  * [root_castles_force](#root_castles_force)
-  * [root_ohmyzsh](#root_ohmyzsh)
-  * [root_password](#root_password)
-  * [root_shell](#root_shell)
-  * [root_sshkeys](#root_sshkeys)
-* [Dependencies](#dependencies)
-* [License](#license)
-* [Author](#author)
+- [Default Variables](#default-variables)
+  - [root_bashit](#root_bashit)
+  - [root_castles](#root_castles)
+  - [root_castles_force](#root_castles_force)
+  - [root_ohmyzsh](#root_ohmyzsh)
+  - [root_password](#root_password)
+  - [root_shell](#root_shell)
+  - [root_sshkeys](#root_sshkeys)
+- [Discovered Tags](#discovered-tags)
+- [Dependencies](#dependencies)
+- [License](#license)
+- [Author](#author)
 
 ---
 
@@ -116,9 +117,14 @@ root_sshkeys:
   - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFcPTmdo+7eK+8n2yE7Kx1vyQ4yJwHBngvQOt1MPhKhR tboerger@host3
 ```
 
+## Discovered Tags
+
+**_root_**
+
+
 ## Dependencies
 
-* None
+- None
 
 ## License
 
