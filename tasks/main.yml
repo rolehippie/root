@@ -1,7 +1,23 @@
 # Standards: 1.2
 ---
+- name: Fact install zsh
+  set_fact:
+    root_install_zsh: "{{ 'zsh' in root_shell' }}"
+  tags:
+    - root
+
+- name: Install zsh package
+  when: root_install_zsh
+  package:
+    name: zsh
+    state: present
+  tags:
+    - root
+
 - name: Install required packages
   loop:
+    - acl
+    - bash
     - git
   package:
     name: "{{ item }}"
@@ -91,7 +107,9 @@
     - root
 
 - name: Write custom zshenv
-  when: root_override_zshenv
+  when:
+    - root_install_zsh
+    - root_override_zshenv
   template:
     src: zshenv.j2
     dest: /etc/zsh/zshenv
