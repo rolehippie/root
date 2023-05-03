@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/rolehippie/root/compare/v1.0.0...v1.1.0) (2023-05-03)
+
+
+### Features
+
+* add custom zshenv support ([d09c065](https://github.com/rolehippie/root/commit/d09c065cb01b194a03ebc6ee60425f1e8c2fa777))
+
 ## 1.0.0 (2023-01-05)
 
 
