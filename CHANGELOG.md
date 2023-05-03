@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/rolehippie/root/compare/v1.1.0...v1.1.1) (2023-05-03)
+
+
+### Bugfixes
+
+* resolve typo within zsh check ([67df40f](https://github.com/rolehippie/root/commit/67df40f2548269f8cbec70c1ab19eb32979f3f06))
+* write zshenv only if zsh is installed ([084075a](https://github.com/rolehippie/root/commit/084075a67a61b007ac7d6da5dfc01fc1d76d7415))
+
 ## [1.1.0](https://github.com/rolehippie/root/compare/v1.0.0...v1.1.0) (2023-05-03)
 
 
