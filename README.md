@@ -21,9 +21,11 @@ Building and improving this Ansible role have been sponsored by my current and p
   - [root_bashit_version](#root_bashit_version)
   - [root_castles](#root_castles)
   - [root_castles_force](#root_castles_force)
+  - [root_enable_profile_load](#root_enable_profile_load)
   - [root_homeshick_version](#root_homeshick_version)
   - [root_ohmyzsh](#root_ohmyzsh)
   - [root_ohmyzsh_version](#root_ohmyzsh_version)
+  - [root_override_zshenv](#root_override_zshenv)
   - [root_password](#root_password)
   - [root_shell](#root_shell)
   - [root_sshkeys](#root_sshkeys)
@@ -90,6 +92,16 @@ Force castle updates
 root_castles_force: true
 ```
 
+### root_enable_profile_load
+
+Enable loading of profile.d within zshenv
+
+#### Default value
+
+```YAML
+root_enable_profile_load: true
+```
+
 ### root_homeshick_version
 
 Version of homeshick to install
@@ -118,6 +130,16 @@ Version of bash-it to install
 
 ```YAML
 root_ohmyzsh_version: latest
+```
+
+### root_override_zshenv
+
+Override zshenv provided by system
+
+#### Default value
+
+```YAML
+root_override_zshenv: true
 ```
 
 ### root_password
