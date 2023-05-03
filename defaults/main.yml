@@ -42,4 +42,10 @@ root_homeshick_version: latest
 # @end
 root_sshkeys: []
 
+# @var root_override_zshenv:description: Override zshenv provided by system
+root_override_zshenv: True
+
+# @var root_enable_profile_load:description: Enable loading of profile.d within zshenv
+root_enable_profile_load: True
+
 ...
