@@ -2,7 +2,7 @@
 ---
 - name: Fact install zsh
   set_fact:
-    root_install_zsh: "{{ 'zsh' in root_shell' }}"
+    root_install_zsh: "{{ 'zsh' in root_shell }}"
   tags:
     - root
 
