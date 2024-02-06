@@ -1,7 +1,0 @@
----
-collections:
-  - ansible.posix
-
-roles: []
-
-...
