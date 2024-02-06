@@ -187,7 +187,7 @@ root_sshkeys:
 
 ## Dependencies
 
-- None
+- [ansible.posix](https://github.com/ansible-collections/ansible.posix)
 
 ## License
 
