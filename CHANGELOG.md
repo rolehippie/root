@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.0](https://github.com/rolehippie/root/compare/v1.1.1...v2.0.0) (2024-02-12)
+
+
+### Features
+
+* drop support for ubuntu 18.04 ([ef38254](https://github.com/rolehippie/root/commit/ef38254d8b2e669afb616e1f9996eaa41c4a972a))
+* used full qualified collection names ([7e934e4](https://github.com/rolehippie/root/commit/7e934e440d6b5d3fa29350af9c00095f79ec3758))
+
+
+### Bugfixes
+
+* remove meta requirements and document used collections ([8b9ed37](https://github.com/rolehippie/root/commit/8b9ed376854fce4ac6ea0dc83f6cc6e0b273ef42))
+* use right attribute for user shell ([917a55b](https://github.com/rolehippie/root/commit/917a55b85bf4af95dc820118d38464662e5439d6))
+
 ## [1.1.1](https://github.com/rolehippie/root/compare/v1.1.0...v1.1.1) (2023-05-03)
 
 
