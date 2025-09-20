@@ -6,7 +6,8 @@
     - root
 
 - name: Install zsh package
-  when: root_install_zsh
+  when:
+    - root_install_zsh
   ansible.builtin.package:
     name: zsh
     state: present
@@ -25,7 +26,8 @@
     - root
 
 - name: Update root password
-  when: root_password | default(False)
+  when:
+    - false if root_password is none else (root_password | length > 0)
   ansible.builtin.user:
     name: root
     password: "{{ root_password }}"
@@ -34,7 +36,8 @@
     - root
 
 - name: Enforce root shell
-  when: root_shell | default(False)
+  when:
+    - false if root_shell is none else (root_shell | length > 0)
   ansible.builtin.user:
     name: root
     shell: "{{ root_shell }}"
@@ -42,8 +45,9 @@
     - root
 
 - name: Install ohmyzsh repo
-  when: root_ohmyzsh | default(False)
-  diff: False
+  when:
+    - root_ohmyzsh
+  diff: false
   ansible.builtin.git:
     repo: https://github.com/ohmyzsh/ohmyzsh.git
     dest: /root/.oh-my-zsh
@@ -52,8 +56,9 @@
     - root
 
 - name: Install bashit repo
-  when: root_bashit | default(False)
-  diff: False
+  when:
+    - root_bashit
+  diff: false
   ansible.builtin.git:
     repo: https://github.com/Bash-it/bash-it.git
     dest: /root/.bash_it
@@ -62,7 +67,7 @@
     - root
 
 - name: Clone homeshick base
-  diff: False
+  diff: false
   ansible.builtin.git:
     repo: https://github.com/andsens/homeshick.git
     dest: /root/.homesick/repos/homeshick
@@ -74,8 +79,9 @@
   loop: "{{ root_castles }}"
   loop_control:
     label: "{{ item.name | default(item) }}"
-  when: root_castles | default(False)
-  diff: False
+  when:
+    - root_castles | length > 0
+  diff: false
   ansible.builtin.git:
     repo: "{{ item.name | default(item) if (item.name | default(item)).startswith('http') else 'https://github.com/' + item.name | default(item) }}"
     dest: "/root/.homesick/repos/{{ (item.name | default(item)) | basename }}"
@@ -88,19 +94,21 @@
   loop: "{{ root_castles }}"
   loop_control:
     label: "{{ item.name | default(item) }}"
-  when: root_castles | default(False)
+  when:
+    - root_castles | length > 0
   ansible.builtin.command: "/root/.homesick/repos/homeshick/bin/homeshick -f -b -q link {{ item | basename }}"
-  changed_when: False
+  changed_when: false
   tags:
     - root
 
 - name: Write authorized keys
-  when: root_sshkeys | default(False)
+  when:
+    - root_sshkeys | length > 0
   ansible.posix.authorized_key:
     user: root
     key: "{{ root_sshkeys | join('\n') }}"
     path: /root/.ssh/authorized_keys
-    exclusive: True
+    exclusive: true
     state: present
   tags:
     - root

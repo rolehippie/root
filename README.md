@@ -1,4 +1,4 @@
-# workspace
+# root
 
 [![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/root)
 [![General Workflow](https://github.com/rolehippie/root/actions/workflows/general.yml/badge.svg)](https://github.com/rolehippie/root/actions/workflows/general.yml)
@@ -78,7 +78,7 @@ root_castles: []
 root_castles:
   - tboerger/homeshick-base
   - name: tboerger/homeshick-linux
-    force: True
+    force: true
 ```
 
 ### root_castles_force

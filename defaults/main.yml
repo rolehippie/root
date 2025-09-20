@@ -10,21 +10,21 @@ root_shell: /bin/bash
 # root_castles:
 #   - tboerger/homeshick-base
 #   - name: tboerger/homeshick-linux
-#     force: True
+#     force: true
 # @end
 root_castles: []
 
 # @var root_castles_force:description: Force castle updates
-root_castles_force: True
+root_castles_force: true
 
 # @var root_ohmyzsh:description: Install oh-my-zsh repo
-root_ohmyzsh: False
+root_ohmyzsh: false
 
 # @var root_ohmyzsh_version:description: Version of bash-it to install
 root_ohmyzsh_version: latest
 
 # @var root_bashit:description: Install bash-it repo
-root_bashit: False
+root_bashit: false
 
 # @var root_bashit_version:description: Version of bash-it to install
 root_bashit_version: latest
@@ -42,9 +42,9 @@ root_homeshick_version: latest
 root_sshkeys: []
 
 # @var root_override_zshenv:description: Override zshenv provided by system
-root_override_zshenv: True
+root_override_zshenv: true
 
 # @var root_enable_profile_load:description: Enable loading of profile.d within zshenv
-root_enable_profile_load: True
+root_enable_profile_load: true
 
 ...
