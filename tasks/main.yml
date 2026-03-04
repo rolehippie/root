@@ -27,7 +27,7 @@
 
 - name: Update root password
   when:
-    - false if root_password is none else (root_password | length > 0)
+    - root_password | length > 0
   ansible.builtin.user:
     name: root
     password: "{{ root_password }}"
@@ -37,7 +37,7 @@
 
 - name: Enforce root shell
   when:
-    - false if root_shell is none else (root_shell | length > 0)
+    - root_shell | length > 0
   ansible.builtin.user:
     name: root
     shell: "{{ root_shell }}"
