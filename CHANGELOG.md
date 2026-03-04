@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.1](https://github.com/rolehippie/root/compare/v2.2.0...v2.2.1) (2026-03-04)
+
+### Bugfixes
+
+* add check if values are not none ([b1e30cb](https://github.com/rolehippie/root/commit/b1e30cb08168e977dc1f9ec9b2595f3882d6b085))
+
 ## [2.2.0](https://github.com/rolehippie/root/compare/v2.1.0...v2.2.0) (2026-03-04)
 
 ### Features
